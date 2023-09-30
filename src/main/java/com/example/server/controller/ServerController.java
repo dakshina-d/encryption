@@ -65,8 +65,7 @@ public class ServerController {
     @PostMapping("/encrypt")
     public String encryptData(@RequestBody String dataToEncrypt) {
         try {
-
-            // ToDO : Need to remove double padding
+            
             // Generate a unique salt for this encryption operation
             byte[] ivBytes = generateSalt();
             IvParameterSpec ivParameterSpec = new IvParameterSpec(ivBytes);
