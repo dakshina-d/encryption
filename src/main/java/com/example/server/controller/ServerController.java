@@ -65,10 +65,10 @@ public class ServerController {
     @PostMapping("/encrypt")
     public String encryptData(@RequestBody String dataToEncrypt) {
         try {
-            
+
             // Generate a unique salt for this encryption operation
             byte[] ivBytes = generateSalt();
-            IvParameterSpec ivParameterSpec = new IvParameterSpec(ivBytes);
+            //IvParameterSpec ivParameterSpec = new IvParameterSpec(ivBytes);
 
             // Create a secret key from the shared secret using PBKDF2
             SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
