@@ -23,7 +23,6 @@ public class ServerController {
     private KeyPair serverKeyPair;
     private PublicKey clientPublicKeyObj;
     private byte[] sharedSecret;
-    
 
     @GetMapping("/public-key")
     public String getServerPublicKey() throws Exception {
@@ -67,6 +66,7 @@ public class ServerController {
     public String encryptData(@RequestBody String dataToEncrypt) {
         try {
 
+            // ToDO : Need to remove double padding
             // Generate a unique salt for this encryption operation
             byte[] ivBytes = generateSalt();
             IvParameterSpec ivParameterSpec = new IvParameterSpec(ivBytes);
